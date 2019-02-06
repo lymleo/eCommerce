@@ -1,0 +1,22 @@
+// see how foreign works in the python shell
+from tags.models import Tag
+
+qs = Tag.objects.all()
+print(qs)
+black = Tag.objects.last()
+black.title
+black.slug
+black.products
+black.products.all()
+black.products.all().first()
+
+
+
+from products.models import Product
+
+qs = Product.objects.all()
+tshirt = qs.first()
+tshirt.title
+tshirt.description
+tshirt.tag_set
+tshirt.tag_set.all()
